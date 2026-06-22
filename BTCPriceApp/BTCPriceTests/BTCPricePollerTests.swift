@@ -80,6 +80,16 @@ final class BTCPricePollerTests: XCTestCase {
         XCTAssertEqual(received.value?.code, expectedError.code)
     }
     
+    func test_stop_cancelsSchedule_andDoesNotTriggerLoaderOnFurtherTicks() async {
+        let (sut, scheduler, loader) = makeSUT()
+        sut.start(onPrice: { _ in }, onError: { _ in })
+        
+        sut.stop()
+        scheduler.tick()
+        
+        XCTAssertEqual(loader.loadCallCount, 0)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(

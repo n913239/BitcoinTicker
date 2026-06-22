@@ -31,6 +31,17 @@ public final class BTCPricePoller {
         }
     }
     
+    public func stop() {
+        cancellable?.cancel()
+        cancellable = nil
+        onPrice = nil
+        onError = nil
+    }
+    
+    deinit {
+        cancellable?.cancel()
+    }
+    
     private func load() {
         Task { [weak self] in
             guard let self else { return }
