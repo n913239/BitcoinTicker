@@ -20,7 +20,21 @@ public final class BTCPricePresenter {
     private var lastSuccessfulDate: Date?
     
     public static var loadError: String {
-        "Failed to load data."
+        NSLocalizedString(
+            "BTC_PRICE_LOAD_ERROR",
+            tableName: "BTCPrice",
+            bundle: Bundle(for: BTCPricePresenter.self),
+            comment: "Shown when the price can't be loaded and there is no previous value"
+        )
+    }
+    
+    private static var staleValueFormat: String {
+        NSLocalizedString(
+            "BTC_PRICE_STALE_VALUE_FORMAT",
+            tableName: "BTCPrice",
+            bundle: Bundle(for: BTCPricePresenter.self),
+            comment: "Shown when an update fails but a previous price exists; %@ is the last-updated timestamp"
+        )
     }
     
     public init(
@@ -58,7 +72,8 @@ public final class BTCPricePresenter {
     @MainActor
     public func didFinishLoading(with error: Error) {
         if let price = lastSuccessfulPrice, let date = lastSuccessfulDate {
-            errorView.display(.error(message: "Failed to update value. Displaying last updated value from \(format(date: date))"))
+            let message = String(format: Self.staleValueFormat, format(date: date))
+            errorView.display(.error(message: message))
             priceView.display(BTCPriceViewModel(price: price))
         } else {
             errorView.display(.error(message: Self.loadError))
