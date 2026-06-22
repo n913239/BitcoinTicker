@@ -15,6 +15,8 @@ public final class BTCPricePoller {
     private var cancellable: ScheduleCancellable?
     private var onPrice: ((BTCPriceItem) -> Void)?
     private var onError: ((Error) -> Void)?
+    private let lock = NSLock()
+    private var isLoading = false
     
     public init(loader: BTCPriceLoader, scheduler: Scheduler, period: TimeInterval = 1.0) {
         self.loader = loader
@@ -43,8 +45,18 @@ public final class BTCPricePoller {
     }
     
     private func load() {
+        let shouldStart: Bool = lock.withLock {
+            if isLoading { return false }
+            isLoading = true
+            return true
+        }
+        guard shouldStart else { return }
+        
         Task { [weak self] in
             guard let self else { return }
+            defer {
+                self.lock.withLock { self.isLoading = false }
+            }
             do {
                 let item = try await self.loader.load()
                 self.onPrice?(item)

@@ -90,6 +90,27 @@ final class BTCPricePollerTests: XCTestCase {
         XCTAssertEqual(loader.loadCallCount, 0)
     }
     
+    func test_tick_skipsNewLoadWhilePreviousLoadIsInFlight() async {
+        let (sut, scheduler, loader) = makeSUT()
+        
+        let firstLoadStarted = expectation(description: "first load started")
+        loader.onLoad = { firstLoadStarted.fulfill() }
+        loader.enableBlocking()
+        
+        let loadFinished = expectation(description: "first load finished")
+        sut.start(onPrice: { _ in loadFinished.fulfill() }, onError: { _ in })
+        
+        scheduler.tick()                              // 第一次 load 開始、卡住（in-flight）
+        await fulfillment(of: [firstLoadStarted], timeout: 1.0)
+        
+        scheduler.tick()                              // 第二次 tick：應被跳過
+        
+        XCTAssertEqual(loader.loadCallCount, 1, "Second tick must be skipped while a load is in flight")
+        
+        loader.release()                              // 放行，讓第一次 load 完成（避免記憶體洩漏）
+        await fulfillment(of: [loadFinished], timeout: 1.0)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(
@@ -111,6 +132,8 @@ final class BTCPricePollerTests: XCTestCase {
         private var _loadCallCount = 0
         private var stubbedResult: Result<BTCPriceItem, Error> = .success(BTCPriceItem(price: 0))
         private var _onLoad: (() -> Void)?
+        private var _shouldBlock = false
+        private var _gate: CheckedContinuation<Void, Never>?
         
         var loadCallCount: Int {
             queue.sync { _loadCallCount }
@@ -125,11 +148,29 @@ final class BTCPricePollerTests: XCTestCase {
             queue.sync { stubbedResult = result }
         }
         
+        func enableBlocking() {
+            queue.sync { _shouldBlock = true }
+        }
+        
+        func release() {
+            let gate: CheckedContinuation<Void, Never>? = queue.sync {
+                let g = _gate
+                _gate = nil
+                return g
+            }
+            gate?.resume()
+        }
+        
         func load() async throws -> BTCPriceItem {
-            let result: Result<BTCPriceItem, Error> = queue.sync {
+            let (result, shouldBlock): (Result<BTCPriceItem, Error>, Bool) = queue.sync {
                 _loadCallCount += 1
                 _onLoad?()
-                return stubbedResult
+                return (stubbedResult, _shouldBlock)
+            }
+            if shouldBlock {
+                await withCheckedContinuation { continuation in
+                    queue.sync { _gate = continuation }
+                }
             }
             switch result {
             case .success(let item): return item
