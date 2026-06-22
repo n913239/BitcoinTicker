@@ -28,6 +28,18 @@ final class BTCPricePresenterTests: XCTestCase {
         ])
     }
     
+    func test_didFinishLoadingWithItem_displaysFormattedPriceAndStopsLoading() {
+        let (sut, spy) = makeSUT()
+        
+        sut.didFinishLoading(with: BTCPriceItem(price: 72615.55))
+        
+        XCTAssertEqual(spy.messages, [
+            .errorMessage(nil),
+            .price("$72,615.55"),
+            .loading(false)
+        ])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(

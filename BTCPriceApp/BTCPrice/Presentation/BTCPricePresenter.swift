@@ -40,4 +40,26 @@ public final class BTCPricePresenter {
         errorView.display(.noError)
         loadingView.display(BTCPriceLoadingViewModel(isLoading: true))
     }
+    
+    @MainActor
+    public func didFinishLoading(with item: BTCPriceItem) {
+        let formatted = format(price: item.price)
+        lastSuccessfulPrice = formatted
+        lastSuccessfulDate = currentDate()
+        errorView.display(.noError)
+        priceView.display(BTCPriceViewModel(price: formatted))
+        loadingView.display(BTCPriceLoadingViewModel(isLoading: false))
+    }
+    
+    // MARK: - Formatting
+    
+    private func format(price: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD"
+        formatter.locale = locale
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: price)) ?? "$\(price)"
+    }
 }
