@@ -15,7 +15,7 @@ final class CoinbaseBTCPriceMapperTests: XCTestCase {
         
         try samples.forEach { code in
             XCTAssertThrowsError(
-                try CoinbaseBTCPriceMapper.map(makeItemJSON(price: "72000.00"), from: makeHTTPURLResponse(statusCode: code))
+                try CoinbaseBTCPriceMapper.map(makeItemJSON(amount: "72000.00"), from: makeHTTPURLResponse(statusCode: code))
             )
         }
     }
@@ -28,19 +28,25 @@ final class CoinbaseBTCPriceMapperTests: XCTestCase {
         )
     }
     
+    func test_map_throwsErrorOn200HTTPResponseWithNonNumericAmount() {
+        XCTAssertThrowsError(
+            try CoinbaseBTCPriceMapper.map(makeItemJSON(amount: "not-a-number"), from: makeHTTPURLResponse(statusCode: 200))
+        )
+    }
+    
     func test_map_deliversItemOn200HTTPResponseWithValidJSON() throws {
         let item = try CoinbaseBTCPriceMapper.map(
-            makeItemJSON(price: "72615.55000000"),
+            makeItemJSON(amount: "72648.73"),
             from: makeHTTPURLResponse(statusCode: 200)
         )
         
-        XCTAssertEqual(item.price, 72615.55, accuracy: 0.01)
+        XCTAssertEqual(item.price, 72648.73, accuracy: 0.01)
     }
     
     // MARK: - Helpers
     
-    private func makeItemJSON(price: String) -> Data {
-        let json = ["symbol": "BTCUSDT", "price": price]
+    private func makeItemJSON(amount: String) -> Data {
+        let json: [String: Any] = ["data": ["amount": amount, "base": "BTC", "currency": "USD"]]
         return try! JSONSerialization.data(withJSONObject: json)
     }
     

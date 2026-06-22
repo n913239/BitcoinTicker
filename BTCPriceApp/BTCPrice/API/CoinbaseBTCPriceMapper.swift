@@ -10,7 +10,11 @@ import Foundation
 public enum CoinbaseBTCPriceMapper {
     
     private struct Root: Decodable {
-        let price: String
+        let data: SpotPrice
+        
+        struct SpotPrice: Decodable {
+            let amount: String
+        }
     }
     
     public enum Error: Swift.Error {
@@ -20,7 +24,7 @@ public enum CoinbaseBTCPriceMapper {
     public static func map(_ data: Data, from response: HTTPURLResponse) throws -> BTCPriceItem {
         guard response.statusCode == 200,
               let root = try? JSONDecoder().decode(Root.self, from: data),
-              let price = Double(root.price) else {
+              let price = Double(root.data.amount) else {
             throw Error.invalidData
         }
         
