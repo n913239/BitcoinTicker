@@ -38,6 +38,24 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
+    func test_getFromURL_failsOnNonHTTPURLResponse() async {
+        let url = URL(string: "https://any-url.com")!
+        let nonHTTPResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        URLProtocolStub.stub(data: Data(), response: nonHTTPResponse, error: nil)
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        let sut = URLSessionHTTPClient(session: session)
+        
+        do {
+            _ = try await sut.get(from: url)
+            XCTFail("Expected error but got success")
+        } catch {
+            XCTAssertTrue(error is URLSessionHTTPClient.UnexpectedValuesRepresentation, "Expected UnexpectedValuesRepresentation, got \(error)")
+        }
+    }
+    
 }
 
 // MARK: - URLProtocol Stub
@@ -65,6 +83,7 @@ private class URLProtocolStub: URLProtocol {
     }
     
     override class func canInit(with request: URLRequest) -> Bool { true }
+    
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     
     override func startLoading() {
