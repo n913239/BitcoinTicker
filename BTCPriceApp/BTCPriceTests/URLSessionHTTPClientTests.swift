@@ -21,56 +21,61 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_getFromURL_failsOnRequestError() async {
-        let url = URL(string: "https://any-url.com")!
-        let expectedError = NSError(domain: "any error", code: 0)
+        let expectedError = anyError()
         URLProtocolStub.stub(data: nil, response: nil, error: expectedError)
         
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = URLSession(configuration: configuration)
-        let sut = URLSessionHTTPClient(session: session)
-        
         do {
-            _ = try await sut.get(from: url)
+            _ = try await makeSUT().get(from: anyURL())
             XCTFail("Expected error but got success")
         } catch {
             XCTAssertNotNil(error)
         }
     }
     
+    func test_getFromURL_succeedsOnHTTPURLResponseWithData() async throws {
+        let expectedData = Data("any data".utf8)
+        let expectedResponse = makeHTTPURLResponse(statusCode: 200)
+        URLProtocolStub.stub(data: expectedData, response: expectedResponse, error: nil)
+        
+        let (data, response) = try await makeSUT().get(from: anyURL())
+        
+        XCTAssertEqual(data, expectedData)
+        XCTAssertEqual(response.statusCode, expectedResponse.statusCode)
+    }
+    
     func test_getFromURL_failsOnNonHTTPURLResponse() async {
-        let url = URL(string: "https://any-url.com")!
-        let nonHTTPResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        let nonHTTPResponse = URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
         URLProtocolStub.stub(data: Data(), response: nonHTTPResponse, error: nil)
         
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = URLSession(configuration: configuration)
-        let sut = URLSessionHTTPClient(session: session)
-        
         do {
-            _ = try await sut.get(from: url)
+            _ = try await makeSUT().get(from: anyURL())
             XCTFail("Expected error but got success")
         } catch {
             XCTAssertTrue(error is URLSessionHTTPClient.UnexpectedValuesRepresentation, "Expected UnexpectedValuesRepresentation, got \(error)")
         }
     }
     
-    func test_getFromURL_succeedsOnHTTPURLResponseWithData() async throws {
-        let url = URL(string: "https://any-url.com")!
-        let expectedData = Data("any data".utf8)
-        let expectedResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        URLProtocolStub.stub(data: expectedData, response: expectedResponse, error: nil)
-        
+    // MARK: - Helpers
+    
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> URLSessionHTTPClient {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = URLSession(configuration: configuration)
         let sut = URLSessionHTTPClient(session: session)
-        
-        let (data, response) = try await sut.get(from: url)
-        
-        XCTAssertEqual(data, expectedData)
-        XCTAssertEqual(response.statusCode, expectedResponse.statusCode)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
+    }
+    
+    private func anyURL() -> URL {
+        URL(string: "https://any-url.com")!
+    }
+    
+    private func makeHTTPURLResponse(statusCode: Int) -> HTTPURLResponse {
+        HTTPURLResponse(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+    }
+    
+    private func anyError() -> NSError {
+        NSError(domain: "any error", code: 0)
     }
     
 }
