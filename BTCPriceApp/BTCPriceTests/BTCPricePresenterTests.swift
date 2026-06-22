@@ -40,6 +40,47 @@ final class BTCPricePresenterTests: XCTestCase {
         ])
     }
     
+    func test_didFinishLoadingWithError_withNoPreviousValue_displaysLoadErrorAndStopsLoading() {
+        let (sut, spy) = makeSUT()
+        
+        sut.didFinishLoading(with: anyError())
+        
+        XCTAssertEqual(spy.messages, [
+            .errorMessage(BTCPricePresenter.loadError),
+            .loading(false)
+        ])
+    }
+    
+    func test_didFinishLoadingWithError_withPreviousValue_displaysLastKnownPriceWithStaleMessage() {
+        let fixedDate = Date(timeIntervalSince1970: 1737720420) // Jan 24, 2025 12:07 UTC
+        let (sut, spy) = makeSUT(
+            currentDate: { fixedDate },
+            locale: Locale(identifier: "en_US"),
+            calendar: utcCalendar()
+        )
+        
+        sut.didFinishLoading(with: BTCPriceItem(price: 72615.55))
+        spy.reset()
+        
+        sut.didFinishLoading(with: anyError())
+        
+        XCTAssertEqual(spy.messages, [
+            .errorMessage("Failed to update value. Displaying last updated value from Jan 24th, 12:07"),
+            .price("$72,615.55"),
+            .loading(false)
+        ])
+    }
+    
+    func test_didFinishLoadingWithItem_afterFailure_clearsErrorMessage() {
+        let (sut, spy) = makeSUT()
+        sut.didFinishLoading(with: anyError())
+        spy.reset()
+        
+        sut.didFinishLoading(with: BTCPriceItem(price: 72615.55))
+        
+        XCTAssertTrue(spy.messages.contains(.errorMessage(nil)), "Expected presenter to clear error message after recovery")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(
@@ -61,6 +102,16 @@ final class BTCPricePresenterTests: XCTestCase {
         trackForMemoryLeaks(spy, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, spy)
+    }
+    
+    private func anyError() -> NSError {
+        NSError(domain: "test", code: 0)
+    }
+    
+    private func utcCalendar() -> Calendar {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        return calendar
     }
     
     @MainActor
