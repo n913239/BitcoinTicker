@@ -1,0 +1,30 @@
+//
+//  BinanceBTCPriceMapper.swift
+//  BTCPrice
+//
+//  Created by mike on 2026/6/22.
+//
+
+import Foundation
+
+public enum BinanceBTCPriceMapper {
+    
+    private struct Root: Decodable {
+        let price: String
+    }
+    
+    public enum Error: Swift.Error {
+        case invalidData
+    }
+    
+    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> BTCPriceItem {
+        guard response.statusCode == 200,
+              let root = try? JSONDecoder().decode(Root.self, from: data),
+              let price = Double(root.price) else {
+            throw Error.invalidData
+        }
+        
+        return BTCPriceItem(price: price)
+    }
+    
+}
