@@ -57,26 +57,3 @@ private final class ConsolePresentationAdapter {
         )
     }
 }
-
-@MainActor
-private final class ConsolePriceView: BTCPriceView, BTCPriceLoadingView, BTCPriceErrorView {
-    private let output: (String) -> Void
-    
-    init(output: @escaping (String) -> Void) {
-        self.output = output
-    }
-    
-    func display(_ viewModel: BTCPriceViewModel) {
-        output("BTC/USD: \(viewModel.price)")
-    }
-    
-    func display(_ viewModel: BTCPriceLoadingViewModel) {
-        // CLI does not show a loading indicator
-    }
-    
-    func display(_ viewModel: BTCPriceErrorViewModel) {
-        if let message = viewModel.message {
-            output("ERROR: \(message)")
-        }
-    }
-}
