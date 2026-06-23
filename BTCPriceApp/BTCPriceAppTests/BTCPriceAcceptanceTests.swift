@@ -82,20 +82,23 @@ final class BTCPriceAcceptanceTests: XCTestCase {
         }
     }
     
-    nonisolated private func response(for url: URL) -> (Data, HTTPURLResponse) {
-        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        return (data(for: url), response)
-    }
-    
-    nonisolated private func data(for url: URL) -> Data {
-        switch url.host {
-        case "api.binance.com":
-            return try! JSONSerialization.data(withJSONObject: ["symbol": "BTCUSDT", "price": "72615.55"])
-        case "api.coinbase.com":
-            return try! JSONSerialization.data(withJSONObject: ["data": ["amount": "73000.00", "base": "BTC", "currency": "USD"]])
-        default:
-            return Data()
-        }
+}
+
+// MARK: - Stub responses（檔案層級 → @Sendable，不捕獲 test-case 狀態）
+
+@Sendable private func response(for url: URL) -> (Data, HTTPURLResponse) {
+    let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+    return (data(for: url), response)
+}
+
+@Sendable private func data(for url: URL) -> Data {
+    switch url.host {
+    case "api.binance.com":
+        return try! JSONSerialization.data(withJSONObject: ["symbol": "BTCUSDT", "price": "72615.55"])
+    case "api.coinbase.com":
+        return try! JSONSerialization.data(withJSONObject: ["data": ["amount": "73000.00", "base": "BTC", "currency": "USD"]])
+    default:
+        return Data()
     }
 }
 
