@@ -30,6 +30,13 @@ jobs:
             -enableCodeCoverage YES \
             -resultBundlePath build/CI_iOS.xcresult
 
+      - name: Build CLI
+        run: |
+          xcodebuild build \
+            -project BTCPriceApp/BTCPriceApp.xcodeproj \
+            -scheme "BTCPriceCLI" \
+            -destination "platform=macOS"
+
       - name: Upload Result Bundle
         if: always()
         uses: actions/upload-artifact@v7
