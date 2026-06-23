@@ -6,30 +6,72 @@
 //
 
 import XCTest
+import BTCPrice
 
+/// End-to-end tests that hit the real Binance and Coinbase endpoints.
+///
+/// These tests are intentionally excluded from the CI test plans because they depend on
+/// network reachability and the third-party APIs being up. Run them locally before
+/// shipping changes that touch the networking or mapper layers.
 final class BTCPriceAPIEndToEndTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_endToEndBinanceLoad_deliversItemWithPositivePrice() async {
+        switch await loadResult(from: binanceURL) {
+        case let .success(item):
+            XCTAssertGreaterThan(item.price, 0, "Expected Binance to deliver a positive BTC price, got \(item.price) instead")
+            
+        case let .failure(error):
+            XCTFail("Expected successful Binance result, got \(error) instead")
         }
     }
-
+    
+    func test_endToEndCoinbaseLoad_deliversItemWithPositivePrice() async {
+        switch await loadResult(from: coinbaseURL, mapper: CoinbaseBTCPriceMapper.map) {
+        case let .success(item):
+            XCTAssertGreaterThan(item.price, 0, "Expected Coinbase to deliver a positive BTC price, got \(item.price) instead")
+            
+        case let .failure(error):
+            XCTFail("Expected successful Coinbase result, got \(error) instead")
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private var binanceURL: URL {
+        URL(string: "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")!
+    }
+    
+    private var coinbaseURL: URL {
+        URL(string: "https://api.coinbase.com/v2/prices/BTC-USD/spot")!
+    }
+    
+    private func loadResult(
+        from url: URL,
+        mapper: @escaping (Data, HTTPURLResponse) throws -> BTCPriceItem = BinanceBTCPriceMapper.map,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) async -> Result<BTCPriceItem, Error> {
+        let client = ephemeralClient(file: file, line: line)
+        do {
+            let (data, response) = try await client.get(from: url)
+            return .success(try mapper(data, response))
+        } catch {
+            return .failure(error)
+        }
+    }
+    
+    private func ephemeralClient(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 10
+        let client = URLSessionHTTPClient(session: URLSession(configuration: configuration))
+        trackForMemoryLeaks(client, file: file, line: line)
+        return client
+    }
+    
+    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+        }
+    }
 }
