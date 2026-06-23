@@ -64,7 +64,10 @@ final class DispatchSourceTimerSchedulerTests: XCTestCase {
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> DispatchSourceTimerScheduler {
-        let sut = DispatchSourceTimerScheduler()
+        // Use a userInitiated queue in tests so the real timer isn't starved by ThreadSanitizer
+        // on CI (the .utility production default occasionally misses its deadline under TSan).
+        // Production keeps the .utility default — a 1s poll doesn't need a high-priority queue.
+        let sut = DispatchSourceTimerScheduler(queue: DispatchQueue(label: "scheduler-tests", qos: .userInitiated))
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
