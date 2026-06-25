@@ -142,9 +142,9 @@ private final class SnapshotWindow: UIWindow {
 // MARK: - Tolerant image comparison
 
 private extension UIImage {
-    /// 容許小幅每像素差異的比對。
-    /// - precision: 必須相符的像素比例（0...1）。
-    /// - perChannelTolerance: 每個 RGBA channel 容許的最大差（0...255）。
+    /// Compares two images allowing a small per-pixel difference.
+    /// - precision: the proportion of pixels that must match (0...1).
+    /// - perChannelTolerance: the maximum allowed difference per RGBA channel (0...255).
     func matchesSnapshot(_ other: UIImage, precision: Double, perChannelTolerance: UInt8) -> Bool {
         guard
             let a = cgImage, let b = other.cgImage,

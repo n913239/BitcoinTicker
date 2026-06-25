@@ -19,7 +19,7 @@ final class DispatchSourceTimerSchedulerTests: XCTestCase {
             expectation.fulfill()
         }
         
-        // 真實計時器整合測試：CI 開 ThreadSanitizer + 低優先佇列偶會 starve，timeout 放寬到 5.0
+        // Real-timer integration test: under ThreadSanitizer on CI a low-priority queue can starve, so the timeout is relaxed to 5.0
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }

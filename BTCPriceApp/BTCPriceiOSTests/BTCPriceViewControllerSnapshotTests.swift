@@ -98,9 +98,9 @@ final class BTCPriceViewControllerSnapshotTests: XCTestCase {
             locale: Locale(identifier: "en_US"),
             calendar: utcCalendar()
         )
-        // NOTE: trackForMemoryLeaks 故意不套在 VC 上。UIKit 透過 SnapshotWindow 的 dummy
-        // UIWindowScene retain 住 VC，即使清了 rootViewController 也釋放不掉。官方 EssentialFeed
-        // 的 snapshot 測試同樣略過 VC 的 leak tracking——leak 把關交給 presenter/acceptance 測試。
+        // trackForMemoryLeaks is intentionally not applied to the VC: UIKit retains it via
+        // the SnapshotWindow's dummy UIWindowScene, so it is not released even after clearing
+        // rootViewController. Leak checks are covered by the presenter and acceptance tests.
         trackForMemoryLeaks(presenter, file: file, line: line)
         return (sut, presenter)
     }

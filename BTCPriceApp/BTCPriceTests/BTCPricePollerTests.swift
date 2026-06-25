@@ -100,14 +100,14 @@ final class BTCPricePollerTests: XCTestCase {
         let loadFinished = expectation(description: "first load finished")
         sut.start(onPrice: { _ in loadFinished.fulfill() }, onError: { _ in })
         
-        scheduler.tick()                              // 第一次 load 開始、卡住（in-flight）
+        scheduler.tick()
         await fulfillment(of: [firstLoadStarted], timeout: 1.0)
-        
-        scheduler.tick()                              // 第二次 tick：應被跳過
-        
+
+        scheduler.tick()
+
         XCTAssertEqual(loader.loadCallCount, 1, "Second tick must be skipped while a load is in flight")
-        
-        loader.release()                              // 放行，讓第一次 load 完成（避免記憶體洩漏）
+
+        loader.release()
         await fulfillment(of: [loadFinished], timeout: 1.0)
     }
     

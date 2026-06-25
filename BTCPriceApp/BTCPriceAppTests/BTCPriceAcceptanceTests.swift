@@ -84,7 +84,7 @@ final class BTCPriceAcceptanceTests: XCTestCase {
     
 }
 
-// MARK: - Stub responses（檔案層級 → @Sendable，不捕獲 test-case 狀態）
+// MARK: - Stub responses
 
 @Sendable private func response(for url: URL) -> (Data, HTTPURLResponse) {
     let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
