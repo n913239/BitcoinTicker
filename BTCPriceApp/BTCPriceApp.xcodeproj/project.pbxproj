@@ -1,0 +1,1100 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2777621A3004813900116484 /* BTCPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; };
+		277762243004813900116484 /* BTCPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; };
+		277762253004813900116484 /* BTCPrice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		277762533004828800116484 /* BTCPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; };
+		277762543004829B00116484 /* BTCPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; };
+		277762553004829F00116484 /* BTCPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277762113004813900116484 /* BTCPrice.framework */; };
+		277762643004866B00116484 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 277762633004866B00116484 /* CI_iOS.xctestplan */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		277761EF30047F4F00116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277761D730047F4E00116484;
+			remoteInfo = BTCPriceApp;
+		};
+		2777621B3004813900116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277762103004813900116484;
+			remoteInfo = BTCPrice;
+		};
+		2777621D3004813900116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277761D730047F4E00116484;
+			remoteInfo = BTCPriceApp;
+		};
+		277762223004813900116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277762103004813900116484;
+			remoteInfo = BTCPrice;
+		};
+		277762403004819000116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277761D730047F4E00116484;
+			remoteInfo = BTCPriceApp;
+		};
+		2777624D300481A300116484 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277761D030047F4E00116484 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277761D730047F4E00116484;
+			remoteInfo = BTCPriceApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		277762293004813900116484 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				277762253004813900116484 /* BTCPrice.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		277761D830047F4E00116484 /* BTCPriceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTCPriceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		277761EE30047F4F00116484 /* BTCPriceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCPriceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277762113004813900116484 /* BTCPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BTCPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		277762193004813900116484 /* BTCPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277762313004816200116484 /* BTCPriceCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BTCPriceCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		2777623C3004819000116484 /* BTCPriceiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCPriceiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27776249300481A300116484 /* BTCPriceAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCPriceAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277762633004866B00116484 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2777620030047F4F00116484 /* Exceptions for "BTCPriceApp" folder in "BTCPriceApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 277761D730047F4E00116484 /* BTCPriceApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		277761DA30047F4E00116484 /* BTCPriceApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2777620030047F4F00116484 /* Exceptions for "BTCPriceApp" folder in "BTCPriceApp" target */,
+			);
+			path = BTCPriceApp;
+			sourceTree = "<group>";
+		};
+		277761F130047F4F00116484 /* BTCPriceAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPriceAppTests;
+			sourceTree = "<group>";
+		};
+		277762123004813900116484 /* BTCPrice */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPrice;
+			sourceTree = "<group>";
+		};
+		2777621F3004813900116484 /* BTCPriceTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPriceTests;
+			sourceTree = "<group>";
+		};
+		277762323004816200116484 /* BTCPriceCLI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPriceCLI;
+			sourceTree = "<group>";
+		};
+		2777623D3004819000116484 /* BTCPriceiOSTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPriceiOSTests;
+			sourceTree = "<group>";
+		};
+		2777624A300481A300116484 /* BTCPriceAPIEndToEndTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BTCPriceAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277761D530047F4E00116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277762243004813900116484 /* BTCPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277761EB30047F4F00116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777620E3004813900116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277762163004813900116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2777621A3004813900116484 /* BTCPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777622E3004816200116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277762533004828800116484 /* BTCPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277762393004819000116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277762543004829B00116484 /* BTCPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27776246300481A300116484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277762553004829F00116484 /* BTCPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		277761CF30047F4E00116484 = {
+			isa = PBXGroup;
+			children = (
+				277762633004866B00116484 /* CI_iOS.xctestplan */,
+				277761DA30047F4E00116484 /* BTCPriceApp */,
+				277761F130047F4F00116484 /* BTCPriceAppTests */,
+				277762123004813900116484 /* BTCPrice */,
+				277762323004816200116484 /* BTCPriceCLI */,
+				2777621F3004813900116484 /* BTCPriceTests */,
+				2777623D3004819000116484 /* BTCPriceiOSTests */,
+				2777624A300481A300116484 /* BTCPriceAPIEndToEndTests */,
+				277762523004828800116484 /* Frameworks */,
+				277761D930047F4E00116484 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		277761D930047F4E00116484 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277761D830047F4E00116484 /* BTCPriceApp.app */,
+				277761EE30047F4F00116484 /* BTCPriceAppTests.xctest */,
+				277762113004813900116484 /* BTCPrice.framework */,
+				277762193004813900116484 /* BTCPriceTests.xctest */,
+				277762313004816200116484 /* BTCPriceCLI */,
+				2777623C3004819000116484 /* BTCPriceiOSTests.xctest */,
+				27776249300481A300116484 /* BTCPriceAPIEndToEndTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		277762523004828800116484 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2777620C3004813900116484 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		277761D730047F4E00116484 /* BTCPriceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2777620130047F4F00116484 /* Build configuration list for PBXNativeTarget "BTCPriceApp" */;
+			buildPhases = (
+				277761D430047F4E00116484 /* Sources */,
+				277761D530047F4E00116484 /* Frameworks */,
+				277761D630047F4E00116484 /* Resources */,
+				277762293004813900116484 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277762233004813900116484 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				277761DA30047F4E00116484 /* BTCPriceApp */,
+			);
+			name = BTCPriceApp;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceApp;
+			productReference = 277761D830047F4E00116484 /* BTCPriceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		277761ED30047F4F00116484 /* BTCPriceAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2777620630047F4F00116484 /* Build configuration list for PBXNativeTarget "BTCPriceAppTests" */;
+			buildPhases = (
+				277761EA30047F4F00116484 /* Sources */,
+				277761EB30047F4F00116484 /* Frameworks */,
+				277761EC30047F4F00116484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277761F030047F4F00116484 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				277761F130047F4F00116484 /* BTCPriceAppTests */,
+			);
+			name = BTCPriceAppTests;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceAppTests;
+			productReference = 277761EE30047F4F00116484 /* BTCPriceAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		277762103004813900116484 /* BTCPrice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277762263004813900116484 /* Build configuration list for PBXNativeTarget "BTCPrice" */;
+			buildPhases = (
+				2777620C3004813900116484 /* Headers */,
+				2777620D3004813900116484 /* Sources */,
+				2777620E3004813900116484 /* Frameworks */,
+				2777620F3004813900116484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				277762123004813900116484 /* BTCPrice */,
+			);
+			name = BTCPrice;
+			packageProductDependencies = (
+			);
+			productName = BTCPrice;
+			productReference = 277762113004813900116484 /* BTCPrice.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		277762183004813900116484 /* BTCPriceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2777622A3004813900116484 /* Build configuration list for PBXNativeTarget "BTCPriceTests" */;
+			buildPhases = (
+				277762153004813900116484 /* Sources */,
+				277762163004813900116484 /* Frameworks */,
+				277762173004813900116484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2777621C3004813900116484 /* PBXTargetDependency */,
+				2777621E3004813900116484 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2777621F3004813900116484 /* BTCPriceTests */,
+			);
+			name = BTCPriceTests;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceTests;
+			productReference = 277762193004813900116484 /* BTCPriceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		277762303004816200116484 /* BTCPriceCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277762353004816200116484 /* Build configuration list for PBXNativeTarget "BTCPriceCLI" */;
+			buildPhases = (
+				2777622D3004816200116484 /* Sources */,
+				2777622E3004816200116484 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				277762323004816200116484 /* BTCPriceCLI */,
+			);
+			name = BTCPriceCLI;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceCLI;
+			productReference = 277762313004816200116484 /* BTCPriceCLI */;
+			productType = "com.apple.product-type.tool";
+		};
+		2777623B3004819000116484 /* BTCPriceiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277762423004819000116484 /* Build configuration list for PBXNativeTarget "BTCPriceiOSTests" */;
+			buildPhases = (
+				277762383004819000116484 /* Sources */,
+				277762393004819000116484 /* Frameworks */,
+				2777623A3004819000116484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277762413004819000116484 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2777623D3004819000116484 /* BTCPriceiOSTests */,
+			);
+			name = BTCPriceiOSTests;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceiOSTests;
+			productReference = 2777623C3004819000116484 /* BTCPriceiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27776248300481A300116484 /* BTCPriceAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2777624F300481A300116484 /* Build configuration list for PBXNativeTarget "BTCPriceAPIEndToEndTests" */;
+			buildPhases = (
+				27776245300481A300116484 /* Sources */,
+				27776246300481A300116484 /* Frameworks */,
+				27776247300481A300116484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2777624E300481A300116484 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2777624A300481A300116484 /* BTCPriceAPIEndToEndTests */,
+			);
+			name = BTCPriceAPIEndToEndTests;
+			packageProductDependencies = (
+			);
+			productName = BTCPriceAPIEndToEndTests;
+			productReference = 27776249300481A300116484 /* BTCPriceAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		277761D030047F4E00116484 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					277761D730047F4E00116484 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					277761ED30047F4F00116484 = {
+						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
+						TestTargetID = 277761D730047F4E00116484;
+					};
+					277762103004813900116484 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					277762183004813900116484 = {
+						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
+						TestTargetID = 277761D730047F4E00116484;
+					};
+					277762303004816200116484 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					2777623B3004819000116484 = {
+						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
+						TestTargetID = 277761D730047F4E00116484;
+					};
+					27776248300481A300116484 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 277761D730047F4E00116484;
+					};
+				};
+			};
+			buildConfigurationList = 277761D330047F4E00116484 /* Build configuration list for PBXProject "BTCPriceApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 277761CF30047F4E00116484;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 277761D930047F4E00116484 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277761D730047F4E00116484 /* BTCPriceApp */,
+				277761ED30047F4F00116484 /* BTCPriceAppTests */,
+				277762103004813900116484 /* BTCPrice */,
+				277762303004816200116484 /* BTCPriceCLI */,
+				277762183004813900116484 /* BTCPriceTests */,
+				2777623B3004819000116484 /* BTCPriceiOSTests */,
+				27776248300481A300116484 /* BTCPriceAPIEndToEndTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		277761D630047F4E00116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277761EC30047F4F00116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777620F3004813900116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277762643004866B00116484 /* CI_iOS.xctestplan in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277762173004813900116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777623A3004819000116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27776247300481A300116484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277761D430047F4E00116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277761EA30047F4F00116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777620D3004813900116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277762153004813900116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2777622D3004816200116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277762383004819000116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27776245300481A300116484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		277761F030047F4F00116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277761D730047F4E00116484 /* BTCPriceApp */;
+			targetProxy = 277761EF30047F4F00116484 /* PBXContainerItemProxy */;
+		};
+		2777621C3004813900116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277762103004813900116484 /* BTCPrice */;
+			targetProxy = 2777621B3004813900116484 /* PBXContainerItemProxy */;
+		};
+		2777621E3004813900116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277761D730047F4E00116484 /* BTCPriceApp */;
+			targetProxy = 2777621D3004813900116484 /* PBXContainerItemProxy */;
+		};
+		277762233004813900116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277762103004813900116484 /* BTCPrice */;
+			targetProxy = 277762223004813900116484 /* PBXContainerItemProxy */;
+		};
+		277762413004819000116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277761D730047F4E00116484 /* BTCPriceApp */;
+			targetProxy = 277762403004819000116484 /* PBXContainerItemProxy */;
+		};
+		2777624E300481A300116484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277761D730047F4E00116484 /* BTCPriceApp */;
+			targetProxy = 2777624D300481A300116484 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2777620230047F4F00116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BTCPriceApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2777620330047F4F00116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BTCPriceApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;				
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2777620430047F4F00116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2777620530047F4F00116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2777620730047F4F00116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Debug;
+		};
+		2777620830047F4F00116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Release;
+		};
+		277762273004813900116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPrice;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		277762283004813900116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPrice;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2777622B3004813900116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Debug;
+		};
+		2777622C3004813900116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Release;
+		};
+		277762363004816200116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		277762373004816200116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		277762433004819000116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Debug;
+		};
+		277762443004819000116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Release;
+		};
+		27776250300481A300116484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Debug;
+		};
+		27776251300481A300116484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mike.BTCPriceAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BTCPriceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BTCPriceApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		277761D330047F4E00116484 /* Build configuration list for PBXProject "BTCPriceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2777620430047F4F00116484 /* Debug */,
+				2777620530047F4F00116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2777620130047F4F00116484 /* Build configuration list for PBXNativeTarget "BTCPriceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2777620230047F4F00116484 /* Debug */,
+				2777620330047F4F00116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2777620630047F4F00116484 /* Build configuration list for PBXNativeTarget "BTCPriceAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2777620730047F4F00116484 /* Debug */,
+				2777620830047F4F00116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277762263004813900116484 /* Build configuration list for PBXNativeTarget "BTCPrice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277762273004813900116484 /* Debug */,
+				277762283004813900116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2777622A3004813900116484 /* Build configuration list for PBXNativeTarget "BTCPriceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2777622B3004813900116484 /* Debug */,
+				2777622C3004813900116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277762353004816200116484 /* Build configuration list for PBXNativeTarget "BTCPriceCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277762363004816200116484 /* Debug */,
+				277762373004816200116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277762423004819000116484 /* Build configuration list for PBXNativeTarget "BTCPriceiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277762433004819000116484 /* Debug */,
+				277762443004819000116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2777624F300481A300116484 /* Build configuration list for PBXNativeTarget "BTCPriceAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27776250300481A300116484 /* Debug */,
+				27776251300481A300116484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 277761D030047F4E00116484 /* Project object */;
+}

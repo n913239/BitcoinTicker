@@ -1,0 +1,53 @@
+{
+  "configurations" : [
+    {
+      "id" : "A0256638-1030-4DBD-9973-7F6F95546709",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:BTCPriceApp.xcodeproj",
+          "identifier" : "277762103004813900116484",
+          "name" : "BTCPrice"
+        },
+        {
+          "containerPath" : "container:BTCPriceApp.xcodeproj",
+          "identifier" : "277761D730047F4E00116484",
+          "name" : "BTCPriceApp"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BTCPriceApp.xcodeproj",
+        "identifier" : "2777623B3004819000116484",
+        "name" : "BTCPriceiOSTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BTCPriceApp.xcodeproj",
+        "identifier" : "277761ED30047F4F00116484",
+        "name" : "BTCPriceAppTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BTCPriceApp.xcodeproj",
+        "identifier" : "277762183004813900116484",
+        "name" : "BTCPriceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
