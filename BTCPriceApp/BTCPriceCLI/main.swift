@@ -6,5 +6,17 @@
 //
 
 import Foundation
+import BTCPrice
 
-RunLoop.main.run()
+setvbuf(stdout, nil, _IOLBF, 0)
+
+let httpClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+let scheduler = DispatchSourceTimerScheduler()
+
+let poller = MainActor.assumeIsolated {
+    BTCPriceCLIComposer.compose(httpClient: httpClient, scheduler: scheduler)
+}
+
+withExtendedLifetime(poller) {
+    RunLoop.main.run()
+}
